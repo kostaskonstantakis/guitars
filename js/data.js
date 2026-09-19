@@ -8,12 +8,12 @@ window.guitarData = [
     },
     {
         type: "electric 7string",
-        img: "css/media/solar-a2-7-red-matte.png",
+        img: "css/media/A27.TBR.jpg",
         index: 1
     },
     {
         type: "electric signature",
-        img: "css/media/kirk-hammett-washburn.png",
+        img: "css/media/hammett.jpg",
         index: 2
     },
     {
@@ -33,7 +33,7 @@ window.guitarData = [
     },
     {
         type: "acoustic",
-        img: "css/media/yamaha-acoustic.png",
+        img: "css/media/yamaha.webp",
         index: 6
     },
     {
