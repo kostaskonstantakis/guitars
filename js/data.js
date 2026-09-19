@@ -8,7 +8,7 @@ window.guitarData = [
     },
     {
         type: "electric 7string",
-        img: "css/media/A27.TBR.png",
+        img: "css/media/A2.7TBR.png",
         index: 1
     },
     {
