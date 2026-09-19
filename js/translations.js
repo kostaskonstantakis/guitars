@@ -1,4 +1,3 @@
-// Translations for the guitar collection website
 window.translations = {
     en: {
         page_title: "Kostas' Guitars – My guitar collection",

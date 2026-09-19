@@ -1,6 +1,3 @@
-// Enhanced features: search, sort, favorites, dark mode, keyboard navigation, swipe, lazy loading
-
-// ===== DARK MODE =====
 (function () {
 	const darkModeToggle = document.getElementById('dark-mode-toggle');
 	const darkModeKey = 'guitars-dark-mode';
