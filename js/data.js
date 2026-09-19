@@ -1,5 +1,3 @@
-// guitar list data for dynamic rendering
-// each item includes type, image path and index for translations
 window.guitarData = [
     {
         type: "electric",
@@ -13,7 +11,7 @@ window.guitarData = [
     },
     {
         type: "electric signature",
-        img: "css/media/hammett.png",
+        img: "css/media/hammett-final2.png",
         index: 2
     },
     {
