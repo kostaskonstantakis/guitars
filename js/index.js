@@ -14,9 +14,13 @@ var applyTypeFilter = function() {};
                 var div = document.createElement('div');
                 div.className = 'guitar-section';
                 div.tabIndex = 0;
-                div.setAttribute('role','group');
+				div.setAttribute('role', 'button');
+				div.setAttribute('aria-keyshortcuts', 'Enter Space');
                 div.dataset.type = g.type;
-                var trans = window.translations[currentLang].guitars[g.index];
+				var trans = window.translations[currentLang].guitars[g.index] || {
+					description: 'Guitar from the collection',
+					alt: 'Guitar from the collection'
+				};
                 div.dataset.description = trans.description;
                 div.setAttribute('aria-label', trans.description);
 
@@ -50,6 +54,7 @@ var applyTypeFilter = function() {};
     if (langFilter) {
         function updateLanguage() {
             currentLang = langFilter.value;
+			document.documentElement.lang = currentLang;
             // Update page title
             if (document.getElementById('page-title')) {
                 document.getElementById('page-title').textContent = window.translations[currentLang].page_title;
@@ -214,6 +219,9 @@ updateYearAndAge();
 			if (!item.classList.contains('type-hidden')) {
 				var li = document.createElement('li');
 				li.className = 'splide__slide';
+				li.tabIndex = 0;
+				li.setAttribute('role', 'button');
+				li.setAttribute('aria-label', item.getAttribute('aria-label') || 'Open guitar image');
 				
 				// extract just the img-wrap for cleaner slides
 				var imgWrap = item.querySelector('.guitar-section__img-wrap');
@@ -422,8 +430,16 @@ updateYearAndAge();
 	// Use event delegation
 	var section = document.getElementById('guitars-section');
 	if (section) {
+		section.addEventListener('keydown', function (e) {
+			if (e.key !== 'Enter' && e.key !== ' ') return;
+			var interactiveItem = e.target.closest('.guitar-section, .splide__slide');
+			if (!interactiveItem) return;
+			e.preventDefault();
+			interactiveItem.click();
+		});
+
 		section.addEventListener('click', function (e) {
-			var guitarSection = e.target.closest('.guitar-section');
+			var guitarSection = e.target.closest('.guitar-section, .splide__slide');
 			if (!guitarSection) return;
 			e.preventDefault();
 			var img = guitarSection.querySelector('img');

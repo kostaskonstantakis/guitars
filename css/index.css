@@ -88,6 +88,33 @@
 	outline-offset: 2px;
 }
 
+.audio-toggle {
+	position: fixed;
+	top: 1rem;
+	right: 4.5rem;
+	background: var(--color-footer-bg);
+	color: var(--color-footer-text);
+	border: 2px solid var(--color-outline);
+	border-radius: 50%;
+	width: 2.5rem;
+	height: 2.5rem;
+	font-size: 1.2rem;
+	cursor: pointer;
+	z-index: 99;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.audio-toggle:hover {
+	transform: scale(1.1);
+}
+
+.audio-toggle:focus-visible {
+	outline: 3px solid var(--color-outline);
+	outline-offset: 2px;
+}
+
 /* Κρυφό οπτικά, διαθέσιμο σε screen readers */
 .visually-hidden {
 	position: absolute;
@@ -776,6 +803,15 @@ footer a:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+	}
+
 	.guitar-section__img-wrap::before,
 	.guitar-section__img-wrap::after {
 		transition: none;
