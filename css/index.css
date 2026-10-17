@@ -619,6 +619,17 @@ footer a:focus-visible {
     .guitars-section.orientation-horizontal {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .guitars-section.orientation-horizontal .guitar-section {
+        width: auto;
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .guitars-section.orientation-horizontal .guitar-section img {
+        width: 75%;
+        height: 133.333%;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -631,15 +642,6 @@ footer a:focus-visible {
     .guitars-section.orientation-horizontal {
         display: flex;
         flex-direction: column;
-    }
-    .guitars-section.orientation-horizontal .guitar-section {
-        width: 100%;
-        height: auto;
-    }
-    .guitars-section.orientation-horizontal .guitar-section img {
-        width: 100%;
-        height: auto;
-        transform: rotate(90deg);
     }
 }
 
