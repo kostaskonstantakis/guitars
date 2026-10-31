@@ -11,8 +11,11 @@ window.translations = {
             slideshow: "Slideshow"
         },
         type_label: "Type:",
+        type_filter_aria_label: "Filter by collection status or instrument type",
         type_options: {
-            all: "All",
+            current: "Current guitars",
+            old: "Old guitars",
+            all: "All guitars",
             electric: "Electric Guitar",
             bass: "Bass",
             acoustic: "Acoustic",
@@ -43,7 +46,7 @@ window.translations = {
                 alt: "Kirk Hammett Washburn Student Series. My first guitar ever, back in 2009!"
             },
             {
-                description: "Cort B4 Element Bass. I bought it in 2022 from Kagmakis Guitars in Erxarheia.",
+                description: "Cort B4 Element Bass. I bought it in 2022 from Kagmakis Guitars in Erxarheia and later sold it.",
                 alt: "Cort B4 Element Bass. I bought this in 2022 from Kagmakis Guitars in Erxarheia."
             },
             {
@@ -55,7 +58,7 @@ window.translations = {
                 alt: "Fender Squier Stagemaster. Another happy purchase from Kagmakis Guitars, also in 2022."
             },
             {
-                description: "Yamaha APX 600 Natural acoustic. I ordered this one along with the Misha Mansoor signature guitar from Thomann, in 2021.",
+                description: "Yamaha APX 600 Natural acoustic. I ordered this one along with the Misha Mansoor signature guitar from Thomann in 2021 and later sold it.",
                 alt: "Yamaha APX 600 Natural acoustic. I ordered this one along with the Misha Mansoor signature guitar from Thomann, in 2021."
             },
             {
@@ -88,8 +91,11 @@ window.translations = {
             slideshow: "Slideshow"
         },
         type_label: "Τύπος:",
+        type_filter_aria_label: "Φιλτράρισμα κατά κατάσταση συλλογής ή τύπο οργάνου",
         type_options: {
-            all: "Όλα",
+            current: "Τωρινές κιθάρες",
+            old: "Παλιές κιθάρες",
+            all: "Όλες οι κιθάρες",
             electric: "Ηλεκτρική Κιθάρα",
             bass: "Μπάσο",
             acoustic: "Ακουστική",
@@ -120,8 +126,8 @@ window.translations = {
                 alt: "Kirk Hammett Washburn Student Series. Η πρώτη μου κιθάρα ποτέ, το 2009!"
             },
             {
-                description: "Cort B4 Element Bass. Την αγόρασα το 2022 από τα Kagmakis Guitars στην Ερξαρχεία. Είναι το μοναδικό μπάσο που έχω αυτή τη στιγμή.",
-                alt: "Cort B4 Element Bass. Την αγόρασα το 2022 από τα Kagmakis Guitars στην Ερξαρχεία. Είναι το μοναδικό μπάσο που έχω αυτή τη στιγμή."
+                description: "Cort B4 Element Bass. Την αγόρασα το 2022 από τα Kagmakis Guitars στα Εξάρχεια και την πούλησα αργότερα, το 2026.",
+                alt: "Cort B4 Element Bass. Την αγόρασα το 2022 από τα Kagmakis Guitars στα Εξάρχεια."
             },
             {
                 description: "Fender Squier Telemaster. Την πήρα από το Stolas Store στην Καλλιθέα, το 2022.",
@@ -132,8 +138,8 @@ window.translations = {
                 alt: "Fender Squier Stagemaster. Μια άλλη ευτυχισμένη αγορά από τα Kagmakis Guitars, επίσης το 2022."
             },
             {
-                description: "Yamaha APX 600 Natural ακουστική. Την παρήγγειλα μαζί με την signature κιθάρα του Misha Mansoor από το Thomann, το 2021. Είναι διαθέσιμη. Όποιος ενδιαφέρεται να μου στείλει μήνυμα.",
-                alt: "Yamaha APX 600 Natural ακουστική. Την παρήγγειλα μαζί με την signature κιθάρα του Misha Mansoor από το Thomann, το 2021. Είναι διαθέσιμη. Όποιος ενδιαφέρεται να μου στείλει μήνυμα."
+                description: "Yamaha APX 600 Natural ακουστική. Την παρήγγειλα μαζί με την signature κιθάρα του Misha Mansoor από το Thomann το 2021 και την πούλησα αργότερα, το 2026.",
+                alt: "Yamaha APX 600 Natural ακουστική. Την παρήγγειλα μαζί με την signature κιθάρα του Misha Mansoor από το Thomann, το 2021."
             },
             {
                 description: "Harley Benton JA123 μπαριτόν. Την αγόρασα ξανά από το Thomann, κατά τις διακοπές των Χριστουγέννων του 2025. Έφτασε νωρίς το 2026. Είναι η πιο νέα προσθήκη στην οικογένεια.",
@@ -165,8 +171,11 @@ window.translations = {
             slideshow: "Слайдшоу"
         },
         type_label: "Тип:",
+        type_filter_aria_label: "Фильтр по статусу коллекции или типу инструмента",
         type_options: {
-            all: "Все",
+            current: "Мои гитары",
+            old: "Старые гитары",
+            all: "Все гитары",
             electric: "Электрогитара",
             bass: "Бас",
             acoustic: "Акустика",
@@ -195,8 +204,8 @@ window.translations = {
                 alt: "Kirk Hammett Washburn Student Series. Моя первая гитара вообще, в 2009 году!"
             },
             {
-                description: "Cort B4 Element Bass. Я купил его в 2022 году в Kagmakis Guitars в Эрхарее. Это единственный бас, который у меня сейчас есть.",
-                alt: "Cort B4 Element Bass. Я купил его в 2022 году в Kagmakis Guitars в Эрхарее. Это единственный бас, который у меня сейчас есть."
+                description: "Cort B4 Element Bass. Я купил его в 2022 году в Kagmakis Guitars в Эрхарее, а позже продал.",
+                alt: "Cort B4 Element Bass. Я купил его в 2022 году в Kagmakis Guitars в Эрхарее."
             },
             {
                 description: "Fender Squier Telemaster. Я получил это из магазина Stolas в Каллифее, в 2022 году.",
@@ -207,8 +216,8 @@ window.translations = {
                 alt: "Fender Squier Stagemaster. Ещё одна счастливая покупка из Kagmakis Guitars, тоже в 2022 году."
             },
             {
-                description: "Yamaha APX 600 Natural акустика. Я заказал эту вместе с сигнатурной гитарой Misha Mansoor из Thomann, в 2021 году. Она доступна. Кто заинтересован, напишите мне сообщение.",
-                alt: "Yamaha APX 600 Natural акустика. Я заказал эту вместе с сигнатурной гитарой Misha Mansoor из Thomann, в 2021 году. Она доступна. Кто заинтересован, напишите мне сообщение."
+                description: "Yamaha APX 600 Natural акустика. Я заказал её вместе с сигнатурной гитарой Misha Mansoor из Thomann в 2021 году, а позже продал.",
+                alt: "Yamaha APX 600 Natural акустика. Я заказал её вместе с сигнатурной гитарой Misha Mansoor из Thomann в 2021 году."
             },
             {
                 description: "Harley Benton JA123 баритон. Я снова купил эту из Thomann во время рождественских каникул 2025 года. Она прибыла в начале 2026 года. Это новейшее дополнение к семье.",

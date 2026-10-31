@@ -17,7 +17,8 @@ window.guitarData = [
     {
         type: "bass",
         img: "css/media/cort-b4-element.png",
-        index: 3
+        index: 3,
+        sold: true
     },
     {
         type: "electric",
@@ -32,7 +33,8 @@ window.guitarData = [
     {
         type: "acoustic",
         img: "css/media/yamaha-acoustic.png",
-        index: 6
+        index: 6,
+        sold: true
     },
     {
         type: "electric baritone",

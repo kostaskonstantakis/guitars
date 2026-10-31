@@ -17,6 +17,7 @@ var applyTypeFilter = function() {};
 				div.setAttribute('role', 'button');
 				div.setAttribute('aria-keyshortcuts', 'Enter Space');
                 div.dataset.type = g.type;
+				div.dataset.sold = g.sold ? 'true' : 'false';
 				var trans = window.translations[currentLang].guitars[g.index] || {
 					description: 'Guitar from the collection',
 					alt: 'Guitar from the collection'
@@ -91,6 +92,7 @@ var applyTypeFilter = function() {};
             }
             var typeSelect = document.getElementById('type-filter');
             if (typeSelect) {
+                typeSelect.setAttribute('aria-label', window.translations[currentLang].type_filter_aria_label);
                 var opts = typeSelect.options;
                 for (var i = 0; i < opts.length; i++) {
                     var val = opts[i].value;
@@ -179,7 +181,6 @@ updateYearAndAge();
 
 	var STORAGE_KEY = 'guitars-orientation';
 	var splideInstance = null;
-	var originalHTML = null;
 
 	function destroySplide() {
 		if (splideInstance) {
@@ -190,12 +191,7 @@ updateYearAndAge();
 
 	function initSplide() {
 		destroySplide();
-		
-		// store original HTML if not already done
-		if (!originalHTML) {
-			originalHTML = section.innerHTML;
-		}
-		
+
 		// clear and build Splide structure
 		section.innerHTML = '';
 		section.classList.add('splide');
@@ -209,19 +205,16 @@ updateYearAndAge();
 		var list = document.createElement('ul');
 		list.className = 'splide__list';
 		
-		// collect all visible guitar sections from original HTML
-		var temp = document.createElement('div');
-		temp.innerHTML = originalHTML;
-		var items = temp.querySelectorAll('.guitar-section');
 		var slideCount = 0;
-		
-		items.forEach(function (item) {
+
+		guitarSections.forEach(function (item) {
 			if (!item.classList.contains('type-hidden')) {
 				var li = document.createElement('li');
 				li.className = 'splide__slide';
 				li.tabIndex = 0;
 				li.setAttribute('role', 'button');
 				li.setAttribute('aria-label', item.getAttribute('aria-label') || 'Open guitar image');
+				li.dataset.description = item.dataset.description || '';
 				
 				// extract just the img-wrap for cleaner slides
 				var imgWrap = item.querySelector('.guitar-section__img-wrap');
@@ -292,24 +285,20 @@ updateYearAndAge();
 
 	function restoreGrid() {
 		destroySplide();
-		if (originalHTML) {
-			section.innerHTML = originalHTML;
-			section.classList.remove('splide');
-		}
+		section.innerHTML = '';
+		guitarSections.forEach(function (item) {
+			section.appendChild(item);
+		});
+		section.classList.remove('splide');
 	}
 
 	applyOrientation = function() {
 		var value = filter.value;
-		var typeFilterControl = document.querySelector('.type-filter-control');
 		
 		if (value === 'slideshow') {
 			initSplide();
 			section.classList.remove('orientation-vertical', 'orientation-horizontal');
 			section.classList.add('orientation-slideshow');
-			// hide type filter in slideshow
-			if (typeFilterControl) {
-				typeFilterControl.style.display = 'none';
-			}
 		} else {
 			if (section.classList.contains('orientation-slideshow')) {
 				restoreGrid();
@@ -321,10 +310,6 @@ updateYearAndAge();
 			section.classList.remove('orientation-slideshow');
 			section.classList.remove('orientation-horizontal', 'orientation-vertical');
 			section.classList.add('orientation-' + value);
-			// show type filter in grid modes
-			if (typeFilterControl) {
-				typeFilterControl.style.display = '';
-			}
 		}
 		try { localStorage.setItem(STORAGE_KEY, value); } catch (e) {}
 	};
@@ -339,7 +324,7 @@ updateYearAndAge();
 	filter.addEventListener('change', applyOrientation);
 })();
 
-/* Φίλτρο τύπου (electric / bass / acoustic) */
+/* Φίλτρο κιθάρων και τύπου */
 (function () {
 	var filter = document.getElementById('type-filter');
 	if (!filter) return;
@@ -349,9 +334,17 @@ updateYearAndAge();
 		guitarSections.forEach(function (el) {
 			var typeAttr = el.getAttribute('data-type') || '';
 			var types = typeAttr.split(/\s+/).filter(Boolean);
-			var match = value === 'all' || types.indexOf(value) !== -1;
+			var isSold = el.dataset.sold === 'true';
+			var match = value === 'all'
+				|| (value === 'current' && !isSold)
+				|| (value === 'old' && isSold)
+				|| types.indexOf(value) !== -1;
 			el.classList.toggle('type-hidden', !match);
 		});
+		var orientationFilter = document.getElementById('orientation-filter');
+		if (orientationFilter && orientationFilter.value === 'slideshow') {
+			applyOrientation();
+		}
 	};
 	filter.addEventListener('change', applyTypeFilter);
 	applyTypeFilter();
